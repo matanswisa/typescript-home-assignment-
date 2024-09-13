@@ -31,15 +31,15 @@ const App: React.FC = () => {
 
   const handleUpdateProduct = (updatedProduct: Product) => {
     if (isNewProduct) {
-      setProducts([...products, updatedProduct]); // Add the new product to the array
+      setProducts([...products, updatedProduct]);
     } else {
       const updatedProducts = products.map((product) =>
         product.id === updatedProduct.id ? updatedProduct : product
       );
       setProducts(updatedProducts);
     }
-    setSelectedProduct(updatedProduct); // Ensure the selected product is updated
-    setIsNewProduct(false); // Reset new product flag
+    setSelectedProduct(updatedProduct);
+    setIsNewProduct(false);
   };
 
   const handleSearch = (term: string) => {
@@ -48,14 +48,14 @@ const App: React.FC = () => {
 
   const handleAddProduct = () => {
     setSelectedProduct({
-      id: Date.now(), // Temporary ID, ensure it’s unique
+      id: Date.now(),
       name: '',
       description: '',
       price: 0,
       creationDate: new Date(),
       imageUrl: '',
     });
-    setIsNewProduct(true); // Set flag to indicate a new product is being added
+    setIsNewProduct(true);
   };
 
   const filteredProducts = products.filter((product) =>

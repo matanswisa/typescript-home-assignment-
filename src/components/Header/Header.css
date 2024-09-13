@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #e5f0ff;
+  }
+  
+  .header h1 {
+    margin-right: auto;
+  }
+  
+  .add-button {
+    background-color: #7cb342;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .search-bar {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .sort-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sort-container label {
+    margin-right: 5px;
+  }
+  
+  .sort-container select {
+    padding: 8px;
+    border-radius: 4px;
+  }
+  

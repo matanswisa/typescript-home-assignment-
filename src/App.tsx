@@ -10,8 +10,14 @@ import './App.css';
 const App: React.FC = () => {
   const [products, setProducts] = useState<Product[]>(() => {
     const savedProducts = localStorage.getItem('products');
-    return (savedProducts != '[]' && savedProducts!.length > 0 ) ? JSON.parse(savedProducts!) : initialProducts;
+    let tempProducts : string | null = JSON.parse(savedProducts as string);
+
+    if(tempProducts !== null &&  tempProducts.length){
+      return (JSON.parse(savedProducts!) as Product[]) 
+    }
+    return initialProducts;
   });
+  
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isNewProduct, setIsNewProduct] = useState<boolean>(false);
   const [searchTerm, setSearchTerm] = useState<string>('');
